@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.7.0](https://github.com/gatsbyjs/gatsby/commits/create-gatsby@2.7.0/packages/create-gatsby) (2022-02-08)
+
+[🧾 Release notes](https://www.gatsbyjs.com/docs/reference/release-notes/v4.7)
+
+#### Bug Fixes
+
+- Use MDX v1 [#34710](https://github.com/gatsbyjs/gatsby/issues/34710) ([03a1863](https://github.com/gatsbyjs/gatsby/commit/03a18632e2764e3f1b4b9c80e050282a92e0834c))
+
+#### Refactoring
+
+- Decouple package functions [#34606](https://github.com/gatsbyjs/gatsby/issues/34606) ([dcbdc0c](https://github.com/gatsbyjs/gatsby/commit/dcbdc0cb46713cc90157882e3f7c23b5f03a27c3))
+
+### [2.6.1](https://github.com/gatsbyjs/gatsby/commits/create-gatsby@2.6.1/packages/create-gatsby) (2022-02-04)
+
+#### Bug Fixes
+
+- Use MDX v1 [#34710](https://github.com/gatsbyjs/gatsby/issues/34710) [#34718](https://github.com/gatsbyjs/gatsby/issues/34718) ([8b7b0e1](https://github.com/gatsbyjs/gatsby/commit/8b7b0e17624b01748f721426071660f6479f6e09))
+
+## [2.6.0](https://github.com/gatsbyjs/gatsby/commits/create-gatsby@2.6.0/packages/create-gatsby) (2022-01-25)
+
+[🧾 Release notes](https://www.gatsbyjs.com/docs/reference/release-notes/v4.6)
+
+#### Bug Fixes
+
+- Respect telemetry disable [#34495](https://github.com/gatsbyjs/gatsby/issues/34495) ([44b2ef5](https://github.com/gatsbyjs/gatsby/commit/44b2ef5905801d1b40a15313966867bd3d410be7))
+- Re-Add plugin-add functionality [#34482](https://github.com/gatsbyjs/gatsby/issues/34482) ([618b32b](https://github.com/gatsbyjs/gatsby/commit/618b32b17751c76ea1b1a6f4fbc91da928bd18c1))
+
+### [2.5.1](https://github.com/gatsbyjs/gatsby/commits/create-gatsby@2.5.1/packages/create-gatsby) (2022-01-17)
+
+#### Bug Fixes
+
+- Respect telemetry disable [#34495](https://github.com/gatsbyjs/gatsby/issues/34495) [#34511](https://github.com/gatsbyjs/gatsby/issues/34511) ([9f9cabf](https://github.com/gatsbyjs/gatsby/commit/9f9cabfe05ba89f7e2e94fe29957dcdd610f4a43))
+- Re-Add plugin-add functionality [#34482](https://github.com/gatsbyjs/gatsby/issues/34482) [#34510](https://github.com/gatsbyjs/gatsby/issues/34510) ([0f5f7e4](https://github.com/gatsbyjs/gatsby/commit/0f5f7e46ca4e803a1f43059e5de984ce8cd150f3))
+
 ## [2.5.0](https://github.com/gatsbyjs/gatsby/commits/create-gatsby@2.5.0/packages/create-gatsby) (2022-01-11)
 
 [🧾 Release notes](https://www.gatsbyjs.com/docs/reference/release-notes/v4.5)

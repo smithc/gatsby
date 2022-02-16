@@ -267,6 +267,37 @@ class LocalNodeModel {
 
     const nodeTypeNames = toNodeTypeNames(this.schema, gqlType)
 
+    let runQueryActivity
+
+    // check if we can get node by id and skip
+    // more expensive query pipeline
+    if (
+      typeof query?.filter?.id?.eq !== `undefined` &&
+      Object.keys(query.filter).length === 1 &&
+      Object.keys(query.filter.id).length === 1
+    ) {
+      if (tracer) {
+        runQueryActivity = reporter.phantomActivity(`runQuerySimpleIdEq`, {
+          parentSpan: tracer.getParentActivity().span,
+        })
+        runQueryActivity.start()
+      }
+      const nodeFoundById = this.getNodeById({
+        id: query.filter.id.eq,
+        type: gqlType,
+      })
+
+      if (runQueryActivity) {
+        runQueryActivity.end()
+      }
+
+      return {
+        gqlType,
+        entries: new GatsbyIterable(nodeFoundById ? [nodeFoundById] : []),
+        totalCount: async () => (nodeFoundById ? 1 : 0),
+      }
+    }
+
     let materializationActivity
     if (tracer) {
       materializationActivity = reporter.phantomActivity(`Materialization`, {
@@ -283,6 +314,7 @@ class LocalNodeModel {
       min: query.min,
       sum: query.sum,
     })
+
     const fieldsToResolve = determineResolvableFields(
       this.schemaComposer,
       this.schema,
@@ -300,7 +332,6 @@ class LocalNodeModel {
       materializationActivity.end()
     }
 
-    let runQueryActivity
     if (tracer) {
       runQueryActivity = reporter.phantomActivity(`runQuery`, {
         parentSpan: tracer.getParentActivity().span,
