@@ -9,9 +9,9 @@
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@opentelemetry/semantic-conventions": "0.26.0",
-    "agentkeepalive": "^4.2.0",
+    "agentkeepalive": "^4.2.1",
     "bluebird": "^3.7.2",
-    "body-parser": "^1.19.1",
+    "body-parser": "^1.19.2",
     "fastq": "^1.13.0",
     "gatsby-source-filesystem": "^4.9.0-next.1",
     "got": "^11.8.3",
