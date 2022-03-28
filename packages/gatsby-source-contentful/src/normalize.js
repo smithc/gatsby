@@ -62,7 +62,7 @@ export const buildEntryList = ({ contentTypeItems, currentSyncData }) => {
   const map = new Map(
     contentTypeItems.map(contentType => [contentType.sys.id, []])
   )
-  // Now fill the buckets. Ignore entries for which there exists no bucket. (Not sure if that ever happens)
+  // Now fill the buckets. Ignore entries for which there exists no bucket. (This happens when filterContentType is used)
   currentSyncData.entries.map(entry => {
     const arr = map.get(entry.sys.contentType.sys.id)
     if (arr) {
