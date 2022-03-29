@@ -724,9 +724,7 @@ export const createAssetNodes = ({
       localesFallback,
     })
 
-    const file = getField(assetItem.fields.file)
-      ? getField(assetItem.fields.file)
-      : {}
+    const file = getField(assetItem.fields.file) ?? {}
 
     const assetNode = {
       contentful_id: assetItem.sys.id,
