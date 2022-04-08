@@ -108,7 +108,7 @@ describe(`gatsby-node`, () => {
     pluginOptions = defaultPluginOptions
   ) {
     await createSchemaCustomization(
-      { schema, actions, reporter, cache, store },
+      { schema, actions, reporter, cache },
       pluginOptions
     )
 
