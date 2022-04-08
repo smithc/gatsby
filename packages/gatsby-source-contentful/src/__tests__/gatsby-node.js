@@ -308,6 +308,17 @@ describe(`gatsby-node`, () => {
           })
         )
 
+        const file = getFieldValue(
+          asset.fields.file,
+          locale,
+          defaultLocale,
+          true,
+          noLocaleFallback
+        )
+        if (!file) {
+          return
+        }
+
         // check if asset exists
         expect(getNode(assetId)).toMatchObject({
           title: getFieldValue(
@@ -325,13 +336,7 @@ describe(`gatsby-node`, () => {
               true,
               noLocaleFallback
             ) || ``,
-          file: getFieldValue(
-            asset.fields.file,
-            locale,
-            defaultLocale,
-            true,
-            noLocaleFallback
-          ),
+          file,
         })
       })
     })
@@ -955,7 +960,7 @@ describe(`gatsby-node`, () => {
       true
     )
 
-    expect(actions.createNode).toHaveBeenCalledTimes(13)
+    expect(actions.createNode).toHaveBeenCalledTimes(10)
     expect(actions.deleteNode).toHaveBeenCalledTimes(0)
     expect(actions.touchNode).toHaveBeenCalledTimes(0)
     expect(reporter.info.mock.calls).toMatchInlineSnapshot(`
@@ -994,7 +999,7 @@ describe(`gatsby-node`, () => {
     `)
   })
 
-  it(`is able to render unpublished fields in Delivery API`, async () => {
+  it(`is able to render unpublished fields in Preview API`, async () => {
     const locales = [`en-US`, `nl`]
 
     // @ts-ignore
@@ -1021,7 +1026,7 @@ describe(`gatsby-node`, () => {
       true
     )
 
-    expect(actions.createNode).toHaveBeenCalledTimes(21)
+    expect(actions.createNode).toHaveBeenCalledTimes(16)
     expect(actions.deleteNode).toHaveBeenCalledTimes(0)
     expect(actions.touchNode).toHaveBeenCalledTimes(0)
     expect(reporter.info.mock.calls).toMatchInlineSnapshot(`
