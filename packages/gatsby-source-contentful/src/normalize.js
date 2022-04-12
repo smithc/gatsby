@@ -730,7 +730,7 @@ export const createAssetNodes = ({
     const file = getField(assetItem.fields?.file) ?? null
 
     // Skip empty and unprocessed assets in Preview API
-    if (!file || !file.url) {
+    if (!file || !file.url || !file.contentType || !file.fileName) {
       return
     }
 
