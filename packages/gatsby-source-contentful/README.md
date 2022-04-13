@@ -190,6 +190,19 @@ For example, to exclude content types starting with `page` you could use:
 contentTypeFilter: contentType => !contentType.sys.id.startsWith("page")
 ```
 
+If filter is too broad, and ends up skipping all content types, plugin will throw an error. Here you have some examples where the plugin will throw:
+
+```js
+// We're filtering out every content type that doesn't start with page and every one that starts with page, meaning we're filtering out everything
+contentTypeFilter: contentType =>
+  !contentType.sys.id.startsWith("page") &&
+  contentType.sys.id.startsWith("page")
+```
+
+```js
+contentTypeFilter: () => false
+```
+
 ## How to query for nodes
 
 Two standard node types are available from Contentful: `Asset` and `ContentType`.
